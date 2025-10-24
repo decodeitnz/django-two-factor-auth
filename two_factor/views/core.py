@@ -445,7 +445,7 @@ class SetupView(RedirectURLMixin, IdempotentSessionWizardView):
     session_key_name = 'django_two_factor-qr_secret_key'
     initial_dict = {}
     form_list = (
-        ('welcome', Form),
+        #('welcome', Form), # DecodeIT disables this screen
         ('method', MethodForm),
         # Other forms are dynamically added in get_form_list()
     )
