@@ -59,6 +59,8 @@
     {# hidden submit button to enable [enter] key #}
     <input type="submit" value="" hidden />
 
-    {% include "two_factor/_wizard_actions.html" %}
+    <div class="mt-2">
+      {% include "two_factor/_wizard_actions.html" %}
+    </div>
   </form>
 {% endblock %}
