@@ -605,7 +605,7 @@ class SetupView(RedirectURLMixin, IdempotentSessionWizardView):
             key = self.get_key('generator')
             rawkey = unhexlify(key.encode('ascii'))
             b32key = b32encode(rawkey).decode('utf-8')
-            issuer = get_current_site(self.request).name
+            issuer = getattr(settings, 'TWO_FACTOR_ISSUER', get_current_site(self.request).name)
             username = self.request.user.get_username()
             otpauth_url = get_otpauth_url(username, b32key, issuer)
             self.request.session[self.session_key_name] = b32key
@@ -713,7 +713,7 @@ class QRGeneratorView(View):
     }
 
     def get_issuer(self):
-        return get_current_site(self.request).name
+        return getattr(settings, 'TWO_FACTOR_ISSUER', get_current_site(self.request).name)
 
     def get_username(self):
         try:
