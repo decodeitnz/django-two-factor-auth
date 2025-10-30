@@ -11,7 +11,7 @@
     {% if available_phone_methods %}
       <h2>{% trans "Backup Phone Numbers" %}</h2>
       <p>{% blocktrans trimmed %}If your primary method is not available, we are able to
-        send backup tokens to the phone numbers listed below.{% endblocktrans %}</p>
+        send backup codes to the phone numbers listed below.{% endblocktrans %}</p>
       {% if backup_phones %}
         <ul>
           {% for phone in backup_phones %}
@@ -31,17 +31,17 @@
         class="btn btn-info">{% trans "Add Phone Number" %}</a></p>
     {% endif %}
 
-    <h2>{% trans "Backup Tokens" %}</h2>
+    <h2>{% trans "Backup Codes" %}</h2>
     <p>
       {% blocktrans trimmed %}If you don't have any device with you, you can access
-        your account using backup tokens.{% endblocktrans %}
+        your account using backup codes.{% endblocktrans %}
       {% blocktrans trimmed count counter=backup_tokens %}
-        You have only one backup token remaining.
+        You have only one backup code remaining.
       {% plural %}
-        You have {{ counter }} backup tokens remaining.
+        You have {{ counter }} backup codes remaining.
       {% endblocktrans %}
     </p>
-    <p><a href="{% url 'two_factor:backup_tokens' %}"
+    <p><a href="{% url 'two_factor:backup_codes' %}"
           class="btn btn-info">{% trans "Show Codes" %}</a></p>
 
     <h3>{% trans "Disable Two-Factor Authentication" %}</h3>

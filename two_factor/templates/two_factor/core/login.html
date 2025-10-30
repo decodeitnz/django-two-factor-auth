@@ -14,9 +14,9 @@
   {% elif wizard.steps.current == 'token' %}
     <p>{{ device|as_verbose_action }}</p>
   {% elif wizard.steps.current == 'backup' %}
-    <p>{% blocktrans trimmed %}Use this form for entering backup tokens for logging in.
-      These tokens have been generated for you to print and keep safe. Please
-      enter one of these backup tokens to login to your account.{% endblocktrans %}</p>
+    <p>{% blocktrans trimmed %}Use this form for entering backup codes for logging in.
+      These codes have been generated for you to print and keep safe. Please
+      enter one of these backup codes to login to your account.{% endblocktrans %}</p>
   {% endif %}
 
   <form action="" method="post" class="login-form">
@@ -48,10 +48,10 @@
        <div class="backup_tokens_form">
        <form action="" method="post">
            {% csrf_token %}
-            <p>{% trans "As a last resort, you can use a backup token:" %}</p>
+            <p>{% trans "As a last resort, you can use a backup code:" %}</p>
             <p>
                 <button name="wizard_goto_step" type="submit" value="backup"
-                    class="btn btn-sm btn-secondary btn-block">{% trans "Use Backup Token" %}</button>
+                    class="btn btn-sm btn-secondary btn-block">{% trans "Use Backup Code" %}</button>
             </p>
        </form>
        </div>
