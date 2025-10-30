@@ -27,7 +27,7 @@ class MethodForm(forms.Form):
 
 
 class DeviceValidationForm(forms.Form):
-    token = forms.IntegerField(label=_("Token"), min_value=1, max_value=int('9' * totp_digits()))
+    token = forms.IntegerField(label=_("Code"), min_value=1, max_value=int('9' * totp_digits()))
 
     token.widget.attrs.update({'autofocus': 'autofocus',
                                'inputmode': 'numeric',
@@ -48,7 +48,7 @@ class DeviceValidationForm(forms.Form):
 
 
 class TOTPDeviceForm(forms.Form):
-    token = forms.IntegerField(label=_("Token"), min_value=0, max_value=int('9' * totp_digits()))
+    token = forms.IntegerField(label=_("Code"), min_value=0, max_value=int('9' * totp_digits()))
 
     token.widget.attrs.update({'autofocus': 'autofocus',
                                'inputmode': 'numeric',
@@ -106,7 +106,7 @@ class DisableForm(forms.Form):
 
 
 class AuthenticationTokenForm(OTPAuthenticationFormMixin, forms.Form):
-    otp_token = forms.RegexField(label=_("Token"),
+    otp_token = forms.RegexField(label=_("Code"),
                                  regex=r'^[0-9]*$',
                                  min_length=totp_digits(),
                                  max_length=totp_digits())
@@ -166,4 +166,4 @@ class AuthenticationTokenForm(OTPAuthenticationFormMixin, forms.Form):
 
 
 class BackupTokenForm(AuthenticationTokenForm):
-    otp_token = forms.CharField(label=_("Token"))
+    otp_token = forms.CharField(label=_("Code"))
