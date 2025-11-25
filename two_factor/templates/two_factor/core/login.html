@@ -9,8 +9,9 @@
 {% block content %}
   <h1>{% block title %}{% trans "Login" %}{% endblock %}</h1>
 
+  <div class="gray pt-3 pb-3 ps-3 pe-3">
   {% if wizard.steps.current == 'auth' %}
-    <p>{% blocktrans %}Enter your credentials.{% endblocktrans %}</p>
+    <p>{% blocktrans %}Please enter your credentials.{% endblocktrans %}</p>
   {% elif wizard.steps.current == 'token' %}
     <p>{{ device|as_verbose_action }}</p>
   {% elif wizard.steps.current == 'backup' %}
@@ -42,6 +43,10 @@
     {% endblock %}
   </form>
 
+  <div class="mt-3">
+    <a href="/password_reset/">Forgot Password</a>
+  </div>
+
   {% block 'backup_tokens' %}
     {% if backup_tokens %}
        <hr>
@@ -57,4 +62,5 @@
        </div>
     {% endif %}
   {% endblock %}
+  <div>
 {% endblock %}

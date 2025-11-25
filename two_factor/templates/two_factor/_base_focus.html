@@ -1,11 +1,8 @@
-{% extends "two_factor/_base.html" %}
-
+{% extends 'base.html' %}
 {% block content_wrapper %}
-  <div class="container">
-    <div class="row">
-      <div class="col-md-5 offset-md-3">
-        {% block content %}{% endblock %}
-      </div>
+    <div class="container">
+        <div class="card">
+            {% block content %}{{ block.super }}{% endblock %}
+        </div>
     </div>
-  </div>
 {% endblock %}

@@ -5,7 +5,9 @@
   <h1>{% block title %}{% trans "Enable Two-Factor Authentication" %}{% endblock %}</h1>
 
   <p>{% blocktrans trimmed %}Congratulations, you've successfully enabled two-factor
-      authentication.{% endblocktrans %}</p>
+      authentication.  You can modify or update 2FA setting at any time from the 2FA screen.
+      Or you can download and save Backup Codes, which you can use if your 2FA device is unavailable.
+  {% endblocktrans %}</p>
 
   {% if not phone_methods %}
     <p><a href="{% url 'two_factor:profile' %}"

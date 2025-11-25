@@ -31,7 +31,7 @@
         class="btn btn-info">{% trans "Add Phone Number" %}</a></p>
     {% endif %}
 
-    <h2>{% trans "Backup Codes" %}</h2>
+    <h2>{% trans "Backup codes" %}</h2>
     <p>
       {% blocktrans trimmed %}If you don't have any device with you, you can access
         your account using backup codes.{% endblocktrans %}
@@ -42,7 +42,7 @@
       {% endblocktrans %}
     </p>
     <p><a href="{% url 'two_factor:backup_tokens' %}"
-          class="btn btn-info">{% trans "Show Codes" %}</a></p>
+          class="btn btn-info">{% trans "Show Backup Codes" %}</a></p>
 
     <h3>{% trans "Disable Two-Factor Authentication" %}</h3>
     <p>{% blocktrans trimmed %}However we strongly discourage you to do so, you can
@@ -50,9 +50,19 @@
     <p><a class="btn btn-secondary" href="{% url 'two_factor:disable' %}">
       {% trans "Disable Two-Factor Authentication" %}</a></p>
   {% else %}
-    <p>{% blocktrans trimmed %}Two-factor authentication is not enabled for your
-      account. Enable two-factor authentication for enhanced account
+    <p>{% blocktrans trimmed %}Two-factor authentication is not yet setup for your
+      account. Please enable two-factor authentication for improved account
       security.{% endblocktrans %}</p>
+    <p>{% blocktrans trimmed %}2FA can be setup using either an email address or
+        an Authenticator app on a mobile. You will be prompted for a new code
+        every 30 days, or if you access the forms system on a different
+        computer.{% endblocktrans %}</p>
+    <p>{% blocktrans trimmed %}Once setup, you will also have the option of generating
+        (and printing / saving) Backup codes, which you can use to login without
+        needing the email of app.{% endblocktrans %}</p>
+    <p>{% blocktrans trimmed %}As you share a single login for your pharmacy,
+        the email address and/or mobile will need to be accessible to all staff
+        who may need to log in.{% endblocktrans %}</p>
     <p><a href="{% url 'two_factor:setup' %}" class="btn btn-primary">
       {% trans "Enable Two-Factor Authentication" %}</a>
     </p>

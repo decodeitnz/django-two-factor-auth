@@ -1,0 +1,7 @@
+Hi,
+
+Please use the following one time code to access your account. This code will expire in 10 minutes, and can only be used once.
+
+Your code is: {{ token }}
+
+If you believe you have received this email in error, or have issues logging in, please contact an administrator.
