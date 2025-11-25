@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "django-two-factor-auth"
-version = "1.18.1.1"  # Version number is 1.18.1 (main fork) + an extra number which we increment with each revision
+version = "1.18.1.2"  # Version number is 1.18.1 (main fork) + an extra number which we increment with each revision
 description = "Complete Two-Factor Authentication for Django"
 readme = "README.rst"
 authors = [
